@@ -1,0 +1,21 @@
+[project]
+name = "githubctl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "utkarshg1", email = "gaikwadujg@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv>=1.1.0",
+    "requests>=2.32.3",
+    "typer>=0.15.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+githubctl = "githubctl.main:app"
