@@ -1,0 +1,32 @@
+{
+    "people": [
+      {
+        "name": "Alice",
+        "age": 28,
+        "address": {
+          "city": "New York",
+          "zip": "10001"
+        },
+        "skills": ["Python", "JavaScript", "SQL"]
+      },
+      {
+        "name": "Bob",
+        "age": 35,
+        "address": {
+          "city": "San Francisco",
+          "zip": "94105"
+        },
+        "skills": ["Java", "Ruby", "C++"]
+      },
+      {
+        "name": "Charlie",
+        "age": 22,
+        "address": {
+          "city": "Seattle",
+          "zip": "98101"
+        },
+        "skills": ["C#", "PHP", "HTML"]
+      }
+    ]
+  }
+  

@@ -1,8 +1,10 @@
 import csv
 import json
 import sys
+import jmespath
 from rich.console import Console
 from rich.table import Table
+
 from .options import OutputOption
 
 console = Console()
@@ -46,3 +48,21 @@ def print_beauty(list_of_dict: list[dict], output: OutputOption) -> None:
         console.print(table)
     else:
         raise ValueError(f"Unsupported output option: {output}")
+
+
+def sort_by_key(list_of_dict: list[dict], key: str, reverse: bool = False):
+    """
+    Sort a list of dictionaries by a specified key.
+
+    Args:
+        list_of_dict (list[dict]): The list of dictionaries to sort.
+        key (str): The key to sort by.
+        reverse (bool): Whether to sort in reverse order. Defaults to False.
+
+    Returns:
+        list[dict]: The sorted list of dictionaries.
+    """
+    expr = f"sort_by(@,&{key})"
+    if reverse:
+        expr += ".reverse(@)"
+    return jmespath.search(expr, list_of_dict)
