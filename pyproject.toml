@@ -1,7 +1,7 @@
 [project]
 name = "githubctl"
 version = "0.1.0"
-description = "Add your description here"
+description = "GitHub CLI for managing GitHub repositories"
 readme = "README.md"
 authors = [
     { name = "utkarshg1", email = "gaikwadujg@gmail.com" }
@@ -13,6 +13,16 @@ dependencies = [
     "requests>=2.32.3",
     "typer>=0.15.3",
 ]
+
+[project.urls]
+Homepage = "https://github.com/utkarshg1/githubctl"
+Issues = "https://github.com/utkarshg1/githubctl/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/githubctl"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [build-system]
 requires = ["hatchling"]
