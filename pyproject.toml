@@ -1,5 +1,5 @@
 [project]
-name = "githubctl"
+name = "githubtypr"
 version = "0.1.0"
 description = "GitHub CLI for managing GitHub repositories"
 readme = "README.md"
@@ -19,7 +19,7 @@ Homepage = "https://github.com/utkarshg1/githubctl"
 Issues = "https://github.com/utkarshg1/githubctl/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/githubctl"]
+packages = ["src/githubtypr"]
 
 [tool.hatch.metadata]
 allow-direct-references = true
@@ -29,4 +29,4 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.scripts]
-githubctl = "githubctl.main:app"
+githubtypr = "githubtypr.main:app"
