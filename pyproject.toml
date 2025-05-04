@@ -1,6 +1,6 @@
 [project]
 name = "githubtypr"
-version = "0.1.0"
+version = "0.1.1"
 description = "GitHub CLI for managing GitHub repositories"
 readme = "README.md"
 authors = [
@@ -15,8 +15,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/utkarshg1/githubctl"
-Issues = "https://github.com/utkarshg1/githubctl/issues"
+Homepage = "https://github.com/utkarshg1/githubtypr"
+Issues = "https://github.com/utkarshg1/githubtypr/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/githubtypr"]
