@@ -8,11 +8,14 @@ from ..utils import print_beauty, sort_by_key
 
 console = Console()
 repo_app = typer.Typer()
+github_api = GitHubAPI()
 
 
-@repo_app.command(name="list", help="List all repositories for a given GitHub username")
+@repo_app.command(name="list", help="List repositories")
 def list_repos(
-    user: str = typer.Option(..., "--user", "-u", help="GitHub username"),
+    user: str = typer.Option(
+        None, "--user", "-u", help="GitHub username (omit for your own repositories)"
+    ),
     output: OutputOption = typer.Option(
         OutputOption.table, "--output", "-o", help="Output Format"
     ),
@@ -26,9 +29,8 @@ def list_repos(
         False, "--reverse", "-r", help="Reverse the sort order"
     ),
 ):
-    """List all repositories for a given GitHub username."""
-    github_api = GitHubAPI()
-    repos = github_api.get_all_repositories(user)
+    """List repositories for a given GitHub username or for yourself."""
+    repos = github_api.get_repositories(user)
     if query:
         try:
             repos = jmespath.search(query, repos)
@@ -52,7 +54,6 @@ def create_repo(
     ),
 ):
     """Create a new repository for the authenticated user."""
-    github_api = GitHubAPI()
     repo = github_api.create_repository(repo_name, private)
     if repo:
         console.print(repo)
