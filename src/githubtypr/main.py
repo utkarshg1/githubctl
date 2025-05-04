@@ -1,3 +1,8 @@
+"""
+Command line interface for GitHub repository and user management.
+This module provides a command line interface (CLI) for managing GitHub repositories and users.
+"""
+
 import os
 import typer
 
